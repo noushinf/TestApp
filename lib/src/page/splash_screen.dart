@@ -82,6 +82,6 @@ class _SplashScreenState extends State<SplashScreen> {
     // var screenHeight = MediaQuery.of(context).size.height;
     //Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => OnBoardPage(screenHeight: screenHeight)));
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => LoginPage()));
+        context, MaterialPageRoute(builder: (context) => MyHomePage()));
   }
 }

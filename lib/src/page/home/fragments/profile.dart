@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:test_app/core/app_colors.dart';
 
 class ProfilePage extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey.shade100,
+        backgroundColor: Colors.white,
         extendBodyBehindAppBar: true,
         extendBody: true,
         appBar: AppBar(
@@ -22,7 +21,6 @@ class ProfilePage extends StatelessWidget {
                 actions: <Widget>[
                   MaterialButton(
                     color: AppColors.lightPrimaryColor,
-
                     shape: CircleBorder(),
                     elevation: 0,
                     child: Icon(Icons.edit),
@@ -32,7 +30,6 @@ class ProfilePage extends StatelessWidget {
               ),
               const SizedBox(height: 10.0),
               UserInfo(),
-
             ],
           ),
         ));
@@ -52,7 +49,7 @@ class UserInfo extends StatelessWidget {
             child: Text(
               "User Information",
               style: TextStyle(
-                color: Colors.black87,
+                color: AppColors.darkPrimaryColor,
                 fontWeight: FontWeight.w500,
                 fontSize: 16,
               ),
@@ -73,23 +70,43 @@ class UserInfo extends StatelessWidget {
                           ListTile(
                             contentPadding: EdgeInsets.symmetric(
                                 horizontal: 12, vertical: 4),
-                            leading: Icon(Icons.my_location),
-                            title: Text("Location"),
+                            leading: Icon(
+                              Icons.my_location,
+                              color: AppColors.darkPrimaryColor,
+                            ),
+                            title: Text("Location",
+                                style: TextStyle(
+                                    color: AppColors.darkPrimaryColor)),
                             subtitle: Text("Kathmandu"),
                           ),
                           ListTile(
-                            leading: Icon(Icons.email),
-                            title: Text("Email"),
+                            leading: Icon(
+                              Icons.email,
+                              color: AppColors.darkPrimaryColor,
+                            ),
+                            title: Text("Email",
+                                style: TextStyle(
+                                    color: AppColors.darkPrimaryColor)),
                             subtitle: Text("sudeptech@gmail.com"),
                           ),
                           ListTile(
-                            leading: Icon(Icons.phone),
-                            title: Text("Phone"),
+                            leading: Icon(
+                              Icons.phone,
+                              color: AppColors.darkPrimaryColor,
+                            ),
+                            title: Text("Phone",
+                                style: TextStyle(
+                                    color: AppColors.darkPrimaryColor)),
                             subtitle: Text("99--99876-56"),
                           ),
                           ListTile(
-                            leading: Icon(Icons.person),
-                            title: Text("About Me"),
+                            leading: Icon(
+                              Icons.person,
+                              color: AppColors.darkPrimaryColor,
+                            ),
+                            title: Text("About Me",
+                                style: TextStyle(
+                                    color: AppColors.darkPrimaryColor)),
                             subtitle: Text(
                                 "This is a about me link and you can khow about me in this section."),
                           ),
@@ -108,7 +125,6 @@ class UserInfo extends StatelessWidget {
 }
 
 class ProfileHeader extends StatelessWidget {
-
   final ImageProvider<dynamic> avatar;
   final String title;
   final String subtitle;
@@ -116,19 +132,18 @@ class ProfileHeader extends StatelessWidget {
 
   const ProfileHeader(
       {Key key,
-
-        @required this.avatar,
-        @required this.title,
-        this.subtitle,
-        this.actions})
+      @required this.avatar,
+      @required this.title,
+      this.subtitle,
+      this.actions})
       : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
         Ink(
           height: 200,
-
         ),
         Ink(
           height: 200,
@@ -187,11 +202,11 @@ class Avatar extends StatelessWidget {
 
   const Avatar(
       {Key key,
-        @required this.image,
-        this.borderColor = AppColors.lightPrimaryColor,
-        this.backgroundColor,
-        this.radius = 30,
-        this.borderWidth = 5})
+      @required this.image,
+      this.borderColor = AppColors.lightPrimaryColor,
+      this.backgroundColor,
+      this.radius = 30,
+      this.borderWidth = 5})
       : super(key: key);
 
   @override
